@@ -12,8 +12,24 @@ function selectionSort(array){
       array[i] = array[lowest];
       array[lowest] = temp;
     }
+  }
+  return array;
+}
 
+function selectionSort(array){
+  const swap = (arr, idx1, idx2) =>
+    ([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]);
 
+  for (var i = 0; i < array.length; i++) {
+    var lowest = i;
+    for (var j = i + 1; j < array.length; j++) {
+      if (array[j] < array[lowest]) {
+        lowest = j;
+      }
+    }
+    if (lowest !== i) {
+      swap(array, i, lowest);
+    }
   }
   return array;
 }
