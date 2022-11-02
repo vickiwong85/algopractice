@@ -51,8 +51,9 @@ class SinglyLinkedList{
     var temp = this.head;
     this.head = this.head.next;
     this.length--;
-    if (this.length === 0) {
+    if (this.length === 1) {
       this.tail = null;
+      this.head = null;
     }
     return temp;
   }
